@@ -81,10 +81,10 @@ class temp_test : public edm::stream::EDProducer<> {
       
       edm::EDGetTokenT<EcalRecHitCollection> EBRecHitCollectionT_; 
       edm::EDGetTokenT<PhotonCollection> photonCollectionT_;
-      edm::EDGetTokenT<int> integer_;
-      edm::EDGetTokenT<trial1> value_;
-      edm::EDGetTokenT<SampleCollection> vecvalues_;
-      edm::EDGetTokenT<float> tempgenParticles_;
+      edm::EDGetTokenT<int>("integer") integer_;
+      edm::EDGetTokenT<trial1>("value") value_;
+      edm::EDGetTokenT<SampleCollection>("vecvalues") vecvalues_;
+      edm::EDGetTokenT<float>("tempgenParticles") tempgenParticles_;
       //virtual void beginRun(edm::Run const&, edm::EventSetup const&) override;
       //virtual void endRun(edm::Run const&, edm::EventSetup const&) override;
       //virtual void beginLuminosityBlock(edm::LuminosityBlock const&, edm::EventSetup const&) override;
