@@ -3,7 +3,7 @@
 // Package:    StuffProd/temp_test
 // Class:      temp_test
 // 
-/**\class MyStuffProducer MyStuffProducer.cc StuffProd/MyStuffProducer/plugins/MyStuffProducer.cc
+/**\class temp_test temp_test.cc StuffProd/temp_testr/plugins/temp_test.cc
  Description: [one line class summary]
  Implementation:
      [Notes on implementation]
