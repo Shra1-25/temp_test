@@ -4,7 +4,7 @@ import FWCore.ParameterSet.VarParsing as VarParsing
 process = cms.Process("temptest")
 
 #process.source = cms.Source("EmptySource")
-process.source = cms.Source("PoolSource", fileNames = cms.untracked.vstring("myOutputFile.root")
+process.source = cms.Source("PoolSource", fileNames = cms.untracked.vstring("file:myOutputFile.root")
     , skipEvents = cms.untracked.uint32(0)#options.skipEvents
     )
 process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(10) )
