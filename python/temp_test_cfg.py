@@ -16,10 +16,10 @@ process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(10) )
 process.stuff = cms.EDProducer('temp_test'
     , reducedEBRecHitCollection = cms.InputTag('reducedEcalRecHitsEB')
     , photonCollection = cms.InputTag('slimmedPhotons')
-    , integer_=cms.InputTag('integer')
-    , value_=cms.InputTag('value')
-    , vecvalues_=cms.InputTag('vecvalues')
-    , tempgenParticles_=cms.InputTag('tempgenParticles')
+    , integer_=cms.InputTag('stuff')
+    , value_=cms.InputTag('stuff')
+    , vecvalues_=cms.InputTag('stuff')
+    , tempgenParticles_=cms.InputTag('stuff')
     )
 
 process.TFileService = cms.Service("TFileService",
