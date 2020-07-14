@@ -59,7 +59,7 @@
 #include "FWCore/ServiceRegistry/interface/Service.h"
 #include "CommonTools/UtilAlgos/interface/TFileService.h"
 using namespace std;
-using namespace edm;
+#include <iostream>
 using pat::PhotonCollection;
 using pat::PhotonRef;
 //
