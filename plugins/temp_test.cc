@@ -175,12 +175,15 @@ temp_test::produce(edm::Event& iEvent, const edm::EventSetup& iSetup)
  edm::Handle<trial1> valstore_;
  iEvent.getByToken( value_, valstore_ );
  //std::cout<<*valstore_<<std::endl;
+ std::cout<<"Stage 8"<<std::endl;
  edm::Handle<SampleCollection> vecstore_;
  iEvent.getByToken( vecvalues_, vecstore_ );
  //std::cout<<intstore_<<std::endl;
+ std::cout<<"Stage 9"<<std::endl;
  edm::Handle<float> floatstore_;
  iEvent.getByToken( tempgenParticles_, floatstore_ );
  std::cout<<*floatstore_<<std::endl;
+ std::cout<<"Stage 10"<<std::endl;
  
  std::cout<<"All Done."<<std::endl;
 }
