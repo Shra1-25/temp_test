@@ -167,9 +167,11 @@ temp_test::produce(edm::Event& iEvent, const edm::EventSetup& iSetup)
  
  edm::Handle<EcalRecHitCollection> EBRecHitsH_;
  iEvent.getByToken( EBRecHitCollectionT_, EBRecHitsH_);
+ std::cout<<"Stage 6"<<std::endl;
  edm::Handle<int> intstore_;
  iEvent.getByToken( integer_, intstore_ );
  std::cout<<*intstore_<<std::endl;
+ std::cout<<"Stage 7"<<std::endl;
  edm::Handle<trial1> valstore_;
  iEvent.getByToken( value_, valstore_ );
  //std::cout<<*valstore_<<std::endl;
