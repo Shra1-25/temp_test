@@ -78,18 +78,13 @@ class temp_test : public edm::stream::EDProducer<> {
       virtual void produce(edm::Event&, const edm::EventSetup&) override;
       virtual void endStream() override;
 
-      cout<<"Start"<<std::endl;
+      
       edm::EDGetTokenT<EcalRecHitCollection> EBRecHitCollectionT_; 
       edm::EDGetTokenT<PhotonCollection> photonCollectionT_;
-      cout<<"Stage 1"<<std::endl;
       edm::EDGetTokenT<int> integer_;
-      cout<<"Stage 2"<<std::endl;
       edm::EDGetTokenT<trial1> value_;
-      cout<<"Stage 3"<<std::endl;
       edm::EDGetTokenT<SampleCollection> vecvalues_;
-      cout<<"Stage 4"<<std::endl;
       edm::EDGetTokenT<float> tempgenParticles_;
-      cout<<"Stage 5"<<std::endl;
       //virtual void beginRun(edm::Run const&, edm::EventSetup const&) override;
       //virtual void endRun(edm::Run const&, edm::EventSetup const&) override;
       //virtual void beginLuminosityBlock(edm::LuminosityBlock const&, edm::EventSetup const&) override;
@@ -122,18 +117,18 @@ temp_test::temp_test(const edm::ParameterSet& iConfig)
    produces<ExampleData2,InRun>();
 */
    //now do what ever other initialization is needed
- 
+  std::cout<<"Start"<<std::endl;
   EBRecHitCollectionT_    = consumes<EcalRecHitCollection>(iConfig.getParameter<edm::InputTag>("reducedEBRecHitCollection"));
   photonCollectionT_ = consumes<PhotonCollection>(iConfig.getParameter<edm::InputTag>("photonCollection"));
-  std::cout<<"Stage 6"<<std::endl;
+  std::cout<<"Stage 1"<<std::endl;
   integer_ = consumes<int>(iConfig.getParameter<edm::InputTag>("integer_"));
-  std::cout<<"Stage 7"<<std::endl;
+  std::cout<<"Stage 2"<<std::endl;
   value_ = consumes<trial1>(iConfig.getParameter<edm::InputTag>("value_"));
-  std::cout<<"Stage 8"<<std::endl;
+  std::cout<<"Stage 3"<<std::endl;
   vecvalues_ = consumes<SampleCollection>(iConfig.getParameter<edm::InputTag>("vecvalues_"));
-  std::cout<<"Stage 9"<<std::endl;
+  std::cout<<"Stage 4"<<std::endl;
   tempgenParticles_ = consumes<float>(iConfig.getParameter<edm::InputTag>("tempgenParticles_"));
-  std::cout<<"Stage 10"<<std::endl;
+  std::cout<<"Stage 5"<<std::endl;
 }
 
 
