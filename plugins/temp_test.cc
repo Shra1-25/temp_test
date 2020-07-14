@@ -78,18 +78,18 @@ class temp_test : public edm::stream::EDProducer<> {
       virtual void produce(edm::Event&, const edm::EventSetup&) override;
       virtual void endStream() override;
 
-      std::cout<<"Start"<<std::endl;
+      cout<<"Start"<<std::endl;
       edm::EDGetTokenT<EcalRecHitCollection> EBRecHitCollectionT_; 
       edm::EDGetTokenT<PhotonCollection> photonCollectionT_;
-      std::cout<<"Stage 1"<<std::endl;
+      cout<<"Stage 1"<<std::endl;
       edm::EDGetTokenT<int> integer_;
-      std::cout<<"Stage 2"<<std::endl;
+      cout<<"Stage 2"<<std::endl;
       edm::EDGetTokenT<trial1> value_;
-      std::cout<<"Stage 3"<<std::endl;
+      cout<<"Stage 3"<<std::endl;
       edm::EDGetTokenT<SampleCollection> vecvalues_;
-      std::cout<<"Stage 4"<<std::endl;
+      cout<<"Stage 4"<<std::endl;
       edm::EDGetTokenT<float> tempgenParticles_;
-      std::cout<<"Stage 5"<<std::endl;
+      cout<<"Stage 5"<<std::endl;
       //virtual void beginRun(edm::Run const&, edm::EventSetup const&) override;
       //virtual void endRun(edm::Run const&, edm::EventSetup const&) override;
       //virtual void beginLuminosityBlock(edm::LuminosityBlock const&, edm::EventSetup const&) override;
