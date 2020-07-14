@@ -68,7 +68,7 @@ using pat::PhotonRef;
 class temp_test : public edm::stream::EDProducer<> {
    public:
       explicit temp_test(const edm::ParameterSet&);
-      ~temp_testr();
+      ~temp_test();
 
       static void fillDescriptions(edm::ConfigurationDescriptions& descriptions);
 
@@ -100,7 +100,7 @@ class temp_test : public edm::stream::EDProducer<> {
 //
 // constructors and destructor
 //
-temp_testr::temp_test(const edm::ParameterSet& iConfig)
+temp_test::temp_test(const edm::ParameterSet& iConfig)
 {
    //register your products
 /* Examples
