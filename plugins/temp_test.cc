@@ -77,9 +77,13 @@ class temp_test : public edm::stream::EDProducer<> {
       virtual void produce(edm::Event&, const edm::EventSetup&) override;
       virtual void endStream() override;
 
- 
+      
       edm::EDGetTokenT<EcalRecHitCollection> EBRecHitCollectionT_; 
       edm::EDGetTokenT<PhotonCollection> photonCollectionT_;
+      edm::EDGetTokenT<int> integer_;
+      edm::EDGetTokenT<trial1> value_;
+      edm::EDGetTokenT<SampleCollection> vecvalues_;
+      edm::EDGetTokenT<float> tempgenParticles_;
       //virtual void beginRun(edm::Run const&, edm::EventSetup const&) override;
       //virtual void endRun(edm::Run const&, edm::EventSetup const&) override;
       //virtual void beginLuminosityBlock(edm::LuminosityBlock const&, edm::EventSetup const&) override;
@@ -115,6 +119,10 @@ temp_test::temp_test(const edm::ParameterSet& iConfig)
  
   EBRecHitCollectionT_    = consumes<EcalRecHitCollection>(iConfig.getParameter<edm::InputTag>("reducedEBRecHitCollection"));
   photonCollectionT_ = consumes<PhotonCollection>(iConfig.getParameter<edm::InputTag>("photonCollection"));
+  integer_ = consumes<int>(iConfig.getParameter<edm::InputTag>("integer_"));
+  value_ = consumes<trial1>(iConfig.getParameter<edm::InputTag>("value_"));
+  vecvalues_ = consumes<SampleCollection>(iConfig.getParameter<edm::InputTag>("vecvalues_"));
+  tempgenParticles_ = consumes<float>(iConfig.getParameter<edm::InputTag>("tempgenParticles_"));
  
 }
 
@@ -154,7 +162,18 @@ temp_test::produce(edm::Event& iEvent, const edm::EventSetup& iSetup)
  
  edm::Handle<EcalRecHitCollection> EBRecHitsH_;
  iEvent.getByToken( EBRecHitCollectionT_, EBRecHitsH_);
- 
+ edm::Handle<int> intstore_;
+ iEvent.getByToken( integer_, intstore_ );
+ std::cout<<*intstore_<<std::endl;
+ edm::Handle<trial1> valstore_;
+ iEvent.getByToken( value_, valstore_ );
+ //std::cout<<*valstore_<<std::endl;
+ edm::Handle<SampleCollection> vecstore_;
+ iEvent.getByToken( vecvalues_, vecstore_ );
+ //std::cout<<intstore_<<std::endl;
+ edm::Handle<float> floatstore_;
+ iEvent.getByToken( tempgenParticles_, floatstore_ );
+ std::cout<<*floatstore_<<std::endl;
  
  std::cout<<"All Done."<<std::endl;
 }
