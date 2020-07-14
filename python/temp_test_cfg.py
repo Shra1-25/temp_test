@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 import FWCore.ParameterSet.VarParsing as VarParsing
 
-process = cms.Process("FramesProducer")
+process = cms.Process("temptest")
 
 #process.source = cms.Source("EmptySource")
 process.source = cms.Source("PoolSource", fileNames = cms.untracked.vstring("file:/afs/cern.ch/user/s/schaudha/public/CMSSW_10_6_8/src/demo/DoublePhotonPt10To100_pythia8_ReAOD_PU2017_MINIAODSIM.root")
@@ -13,7 +13,7 @@ process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
 #module stuff = MyStuffProducer {}
 #process.stuff=cms.EDProducer("MyStuffProducer") 
 
-process.stuff = cms.EDProducer('MyStuffProducer'
+process.stuff = cms.EDProducer('temp_test'
     , reducedEBRecHitCollection = cms.InputTag('reducedEcalRecHitsEB')
     , photonCollection = cms.InputTag('slimmedPhotons'))
 
