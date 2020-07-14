@@ -116,10 +116,6 @@ temp_testr::temp_test(const edm::ParameterSet& iConfig)
   EBRecHitCollectionT_    = consumes<EcalRecHitCollection>(iConfig.getParameter<edm::InputTag>("reducedEBRecHitCollection"));
   photonCollectionT_ = consumes<PhotonCollection>(iConfig.getParameter<edm::InputTag>("photonCollection"));
  
-   produces<trial1>("value");
-   produces<SampleCollection>("vecvalues");
-   produces<int>("integer");
-   produces<float>("tempgenParticles");
 }
 
 
@@ -155,21 +151,11 @@ temp_test::produce(edm::Event& iEvent, const edm::EventSetup& iSetup)
    ESHandle<SetupData> pSetup;
    iSetup.get<SetupRecord>().get(pSetup);
 */
- /*std::auto_ptr<MyStuff> myStuff( new MyStuff );
- iEvent.put( myStuff);*/
+ 
  edm::Handle<EcalRecHitCollection> EBRecHitsH_;
  iEvent.getByToken( EBRecHitCollectionT_, EBRecHitsH_);
  
- std::unique_ptr<SampleCollection> result1 (new SampleCollection);
- std::unique_ptr<trial1> result2 (new trial1);
- std::unique_ptr<int> result3 (new int(10));
- auto result4=std::make_unique<float>(10.0);
- //std::unique_ptr<float> result4 (new float(10.0));
- //std::auto_ptr<int> result3 (new int(10));
- iEvent.put(std::move(result1),"vecvalues");
- iEvent.put(std::move(result2),"value");
- iEvent.put(std::move(result3),"integer");
- iEvent.put(std::move(result4),"tempgenParticles");
+ 
  std::cout<<"All Done."<<std::endl;
 }
 
